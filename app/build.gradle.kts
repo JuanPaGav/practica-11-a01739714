@@ -88,6 +88,12 @@ dependencies {
     // Pruebas instrumentadas (src/androidTest): corren en el emulador, con Android de verdad.
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.kotlinx.coroutines.test)
+
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    // Compose necesita una Activity vacía donde dibujar la pantalla que se prueba.
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 
 }
